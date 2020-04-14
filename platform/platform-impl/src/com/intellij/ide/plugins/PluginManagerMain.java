@@ -411,23 +411,26 @@ public final class PluginManagerMain {
 
     if (updateSettings.isThirdPartyPluginsAllowed()) {
       return true;
+    } else {
+      // do not show third party plugins message
+      updateSettings.setThirdPartyPluginsAllowed(true);
     }
 
-    PluginManager pluginManager = PluginManager.getInstance();
-    for (IdeaPluginDescriptor descriptor : descriptors) {
-      if (!pluginManager.isDevelopedByJetBrains(descriptor)) {
-        String title = IdeBundle.message("third.party.plugins.privacy.note.title");
-        String message = IdeBundle.message("third.party.plugins.privacy.note.message");
-        String yesText = IdeBundle.message("third.party.plugins.privacy.note.yes");
-        String noText = IdeBundle.message("third.party.plugins.privacy.note.no");
-        if (Messages.showYesNoDialog(message, title, yesText, noText, Messages.getWarningIcon()) == Messages.YES) {
-          updateSettings.setThirdPartyPluginsAllowed(true);
-          return true;
-        } else {
-          return false;
-        }
-      }
-    }
+//    PluginManager pluginManager = PluginManager.getInstance();
+//    for (IdeaPluginDescriptor descriptor : descriptors) {
+//      if (!pluginManager.isDevelopedByJetBrains(descriptor)) {
+//        String title = IdeBundle.message("third.party.plugins.privacy.note.title");
+//        String message = IdeBundle.message("third.party.plugins.privacy.note.message");
+//        String yesText = IdeBundle.message("third.party.plugins.privacy.note.yes");
+//        String noText = IdeBundle.message("third.party.plugins.privacy.note.no");
+//        if (Messages.showYesNoDialog(message, title, yesText, noText, Messages.getWarningIcon()) == Messages.YES) {
+//          updateSettings.setThirdPartyPluginsAllowed(true);
+//          return true;
+//        } else {
+//          return false;
+//        }
+//      }
+//    }
 
     return true;
   }
