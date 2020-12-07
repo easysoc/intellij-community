@@ -48,8 +48,8 @@ public final class GeneralSettings implements PersistentStateComponent<GeneralSe
   private static final String SHOW_TIPS_ON_STARTUP_DEFAULT_VALUE_PROPERTY = "ide.show.tips.on.startup.default.value";
 
   private String myBrowserPath = BrowserUtil.getDefaultAlternativeBrowserPath();
-  private boolean myShowTipsOnStartup = Boolean.parseBoolean(System.getProperty(SHOW_TIPS_ON_STARTUP_DEFAULT_VALUE_PROPERTY, "true"));
-  private boolean myReopenLastProject = true;
+  private boolean myShowTipsOnStartup = Boolean.parseBoolean(System.getProperty(SHOW_TIPS_ON_STARTUP_DEFAULT_VALUE_PROPERTY, "false"));
+  private boolean myReopenLastProject = false;
   private boolean mySupportScreenReaders = ObjectUtils.chooseNotNull(SUPPORT_SCREEN_READERS_OVERRIDDEN, Boolean.getBoolean(SCREEN_READERS_DETECTED_PROPERTY));
   private boolean mySyncOnFrameActivation = true;
   private boolean mySaveOnFrameDeactivation = true;
