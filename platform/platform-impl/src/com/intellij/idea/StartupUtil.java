@@ -808,6 +808,10 @@ public final class StartupUtil {
                                                               @NotNull CompletableFuture<?> initUiTask,
                                                               @NotNull EndUserAgreement.Document agreement) {
     boolean dialogWasShown = false;
+    if (!ApplicationInfoImpl.getShadowInstance().isVendorJetBrains()) {
+      runInEdtAndWait(log, () -> {}, initUiTask);  // fix non-jetBrains vendor splash delay
+      return dialogWasShown;
+    }
     EndUserAgreement.updateCachedContentToLatestBundledVersion();
     if (!agreement.isAccepted()) {
       // todo: does not seem to request focus when shown
