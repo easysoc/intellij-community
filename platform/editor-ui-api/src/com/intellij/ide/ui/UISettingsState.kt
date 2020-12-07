@@ -169,7 +169,7 @@ class UISettingsState : BaseState() {
   @get:OptionTag("PRESENTATION_MODE_FONT_SIZE")
   var presentationModeFontSize by property(24)
   @get:OptionTag("MARK_MODIFIED_TABS_WITH_ASTERISK")
-  var markModifiedTabsWithAsterisk by property(false)
+  var markModifiedTabsWithAsterisk by property(true)
   @get:OptionTag("SHOW_TABS_TOOLTIPS")
   var showTabsTooltips by property(true)
   @get:OptionTag("SHOW_DIRECTORY_FOR_NON_UNIQUE_FILENAMES")
