@@ -575,9 +575,10 @@ public class PluginDetailsPageComponent extends MultiPanel {
       myHomePage.hide();
     }
     else {
+      String url = myPlugin.getUrl();
       myHomePage.show(IdeBundle.message(
         "plugins.configurable.plugin.homepage.link"),
-                      () -> BrowserUtil.browse(MARKETPLACE_LINK + URLUtil.encodeURIComponent(myPlugin.getPluginId().getIdString()))
+                      () -> BrowserUtil.browse(url != null && !url.isEmpty()? url : MARKETPLACE_LINK + URLUtil.encodeURIComponent(myPlugin.getPluginId().getIdString()))
       );
     }
 
