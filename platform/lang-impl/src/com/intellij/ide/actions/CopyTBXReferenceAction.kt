@@ -29,7 +29,7 @@ object CopyTBXReferenceAction {
   private val LOG = Logger.getInstance(CopyTBXReferenceAction::class.java)
   private const val JETBRAINS_NAVIGATE = JetBrainsProtocolHandler.PROTOCOL
   @NlsSafe
-  private val IDE_TAGS = mapOf(IDEA_PREFIX to "idea",
+  private val IDE_TAGS = mapOf(IDEA_PREFIX to "idea",CHIP_PREFIX to "chip",
                                IDEA_CE_PREFIX to "idea",
                                APPCODE_PREFIX to "appcode",
                                CLION_PREFIX to "clion",
