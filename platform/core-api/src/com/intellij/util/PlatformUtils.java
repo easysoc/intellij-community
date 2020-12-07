@@ -25,6 +25,7 @@ public final class PlatformUtils {
   // NOTE: If you add any new prefixes to this list, please update the IntelliJPlatformProduct class in DevKit plugin
   public static final @NonNls String IDEA_PREFIX = "idea";
   public static final @NonNls String IDEA_CE_PREFIX = "Idea";
+  public static final String CHIP_PREFIX = "Chip";
   public static final String IDEA_EDU_PREFIX = "IdeaEdu";
   public static final String APPCODE_PREFIX = "AppCode";
   public static final String CLION_PREFIX = "CLion";
@@ -73,7 +74,7 @@ public final class PlatformUtils {
   }
 
   public static boolean isIdeaCommunity() {
-    return is(IDEA_CE_PREFIX);
+    return is(CHIP_PREFIX) || is(IDEA_CE_PREFIX);
   }
 
   public static boolean isIdeaEducational() {
