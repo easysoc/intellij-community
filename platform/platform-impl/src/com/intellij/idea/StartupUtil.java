@@ -754,7 +754,7 @@ public final class StartupUtil {
         Main.showMessage(BootstrapBundle.message("bootstrap.error.title.configuration.wizard.failed"), e);
         return;
       }
-    } else if (Boolean.parseBoolean(System.getProperty("idea.show.customize.ide.wizard"))) {
+    } else {
         new CustomizeIDEWizardDialog(provider, appStarter, true, false).showIfNeeded();
     }
 
