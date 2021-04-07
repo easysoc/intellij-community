@@ -247,7 +247,7 @@ public final class AppUIUtil {
       .replace(' ', '-')
       .replace("intellij-idea", "idea").replace("android-studio", "studio")  // backward compatibility
       .replace("-community-edition", "-ce").replace("-ultimate-edition", "").replace("-professional-edition", "");
-    String wmClass = name.startsWith(VENDOR_PREFIX) ? name : VENDOR_PREFIX + name;
+    String wmClass = name;
     if (PluginManagerCore.isRunningFromSources()) {
       wmClass += "-debug";
     }
