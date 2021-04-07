@@ -6,6 +6,10 @@
         <property name="work.idea.home" value="$APPLICATION_HOME_DIR$" />
       </properties>
     </buildFile>
+    <buildFile url="file://$PROJECT_DIR$/chip/build.xml">
+      <maximumHeapSize value="512" />
+      <maximumStackSize value="20" />
+    </buildFile>
   </component>
   <component name="GantSettings">
     <option name="SDK_HOME" value="$PROJECT_DIR$/build/lib/gant" />
