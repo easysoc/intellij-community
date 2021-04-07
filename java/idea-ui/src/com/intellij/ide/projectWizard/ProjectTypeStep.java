@@ -19,6 +19,7 @@ import com.intellij.openapi.diagnostic.Logger;
 import com.intellij.openapi.extensions.ExtensionPointName;
 import com.intellij.openapi.module.Module;
 import com.intellij.openapi.module.ModuleType;
+import com.intellij.openapi.module.ModuleTypeId;
 import com.intellij.openapi.module.WebModuleTypeBase;
 import com.intellij.openapi.options.ConfigurationException;
 import com.intellij.openapi.progress.ProgressIndicator;
@@ -283,7 +284,7 @@ public final class ProjectTypeStep extends ModuleWizardStep implements SettingsS
       ModuleBuilder builder = group.getModuleBuilder();
       if (builder == null || builder.isAvailable()) {
         myTemplatesMap.remove(group);
-        myTemplatesMap.put(group, new ArrayList<>());
+        if (!category.getId().equals(ModuleTypeId.JAVA_MODULE)) myTemplatesMap.put(group, new ArrayList<>());
       }
     }
 
@@ -330,15 +331,6 @@ public final class ProjectTypeStep extends ModuleWizardStep implements SettingsS
     }
 
     // remove Static Web group in IDEA Community if no specific templates found (IDEA-120593)
-    if (PlatformUtils.isIdeaCommunity()) {
-      for (ListIterator<TemplatesGroup> iterator = groups.listIterator(); iterator.hasNext(); ) {
-        TemplatesGroup group = iterator.next();
-        if (WebModuleTypeBase.WEB_MODULE.equals(group.getId()) && myTemplatesMap.get(group).isEmpty()) {
-          iterator.remove();
-          break;
-        }
-      }
-    }
 
     return groups;
   }
@@ -434,10 +426,6 @@ public final class ProjectTypeStep extends ModuleWizardStep implements SettingsS
 
   private void setTemplatesList(TemplatesGroup group, Collection<? extends ProjectTemplate> templates, boolean preserveSelection) {
     List<ProjectTemplate> list = new ArrayList<>(templates);
-    ModuleBuilder moduleBuilder = group.getModuleBuilder();
-    if (moduleBuilder != null && !(moduleBuilder instanceof TemplateModuleBuilder)) {
-      list.add(0, new BuilderBasedTemplate(moduleBuilder));
-    }
     myTemplatesList.setTemplates(list, preserveSelection);
   }
 
