@@ -800,13 +800,9 @@
         <action id="HelpTopics" class="com.intellij.ide.actions.HelpTopicsAction" icon="AllIcons.Actions.Help"/>
         <action id="OnlineDocAction" class="com.intellij.ide.actions.OnlineDocAction"/>
         <action id="Help.KeymapReference" class="com.intellij.ide.actions.RefCardAction"/>
-        <action id="Help.JetBrainsTV" class="com.intellij.ide.actions.JetBrainsTvAction"/>
-        <action id="ShowTips" class="com.intellij.ide.actions.ShowTipsAction"/>
         <separator/>
         <action id="ProductivityGuide" class="com.intellij.featureStatistics.actions.ShowFeatureUsageStatisticsAction"/>
         <separator/>
-        <action id="TechnicalSupport" class="com.intellij.ide.actions.TechnicalSupportAction"/>
-        <action id="ReportProblem" class="com.intellij.ide.actions.ReportProblemAction"/>
         <action id="SendFeedback" class="com.intellij.ide.actions.SendFeedbackAction"/>
         <action id="OpenLog" internal="true" class="com.intellij.internal.OpenLogAction"/>
         <action id="ShowLog" class="com.intellij.ide.actions.ShowLogAction">
@@ -930,8 +926,6 @@
     <group id="WelcomeScreen.Documentation">
       <reference ref="HelpTopics"/>
       <reference ref="About"/>
-      <reference ref="ShowTips"/>
-      <reference ref="Help.JetBrainsTV"/>
       <reference ref="Help.KeymapReference"/>
     </group>
 
@@ -981,9 +975,7 @@
     <group id="WelcomeScreen.LearnIdeHelp">
       <reference ref="HelpTopics"/>
       <reference ref="OnlineDocAction"/>
-      <reference ref="Help.JetBrainsTV"/>
       <reference ref="Help.KeymapReference"/>
-      <reference ref="ShowTips"/>
     </group>
 
 
