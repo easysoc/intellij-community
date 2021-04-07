@@ -183,7 +183,7 @@ final class BuildTasksImpl extends BuildTasks {
     }
 
     //todo[nik] introduce special systemSelectorWithoutVersion instead?
-    String settingsDir = buildContext.systemSelector.replaceFirst("\\d+(\\.\\d+)?", "")
+    String settingsDir = buildContext.systemSelector
     String temp = builder.toString()
     builder.setLength(0)
     builder.append(BuildUtils.replaceAll(temp, ["settings_dir": settingsDir], "@@"))
