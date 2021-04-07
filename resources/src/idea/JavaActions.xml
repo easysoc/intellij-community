@@ -153,7 +153,7 @@
 
     <!-- Help -->
     <action id="WhatsNewAction" class="com.intellij.ide.actions.WhatsNewAction">
-      <add-to-group group-id="HelpMenu" anchor="after" relative-to-action="ShowTips"/>
+      <add-to-group group-id="HelpMenu" anchor="after" relative-to-action="Help.KeymapReference"/>
     </action>
 
     <!-- Toolbar -->
@@ -256,11 +256,6 @@
 
     <!-- ****************************************************************** -->
 
-    <group id="WelcomeScreen.Documentation.IDEA">
-      <action id="WelcomeScreen.DevelopPlugins" class="com.intellij.openapi.wm.impl.welcomeScreen.DevelopPluginsAction"/>
-      <add-to-group group-id="WelcomeScreen.Documentation" anchor="last"/>
-    </group>
-
     <action id="WelcomeScreen.Configure.ProjectStructure" class="com.intellij.ide.actions.TemplateProjectStructureAction">
       <add-to-group group-id="WelcomeScreen.Configure" anchor="before" relative-to-action="RunConfigurationTemplatesForNewProjects"/>
     </action>
@@ -303,15 +298,15 @@
       <add-to-group group-id="GenerateGroup" anchor="last"/>
     </group>
 
-    <action id="NewClass" class="com.intellij.ide.actions.CreateClassAction">
-      <add-to-group group-id="NewGroup1" anchor="first"/>
-    </action>
+    <!--<action id="NewClass" class="com.intellij.ide.actions.CreateClassAction">-->
+    <!--  <add-to-group group-id="NewGroup1" anchor="first"/>-->
+    <!--</action>-->
 
-    <group id="NewJavaSpecialFile">
-      <action id="NewPackageInfo" class="com.intellij.ide.actions.CreatePackageInfoAction"/>
-      <action id="NewModuleInfo" class="com.intellij.ide.actions.CreateModuleInfoAction"/>
-      <add-to-group group-id="NewGroup" anchor="after" relative-to-action="NewDir"/>
-    </group>
+    <!--<group id="NewJavaSpecialFile">-->
+    <!--  <action id="NewPackageInfo" class="com.intellij.ide.actions.CreatePackageInfoAction"/>-->
+    <!--  <action id="NewModuleInfo" class="com.intellij.ide.actions.CreateModuleInfoAction"/>-->
+    <!--  <add-to-group group-id="NewGroup" anchor="after" relative-to-action="NewDir"/>-->
+    <!--</group>-->
 
     <action id="InferNullity" class="com.intellij.codeInspection.inferNullity.InferNullityAnnotationsAction">
       <add-to-group group-id="InspectCodeGroup" anchor="after" relative-to-action="ViewOfflineInspection"/>
