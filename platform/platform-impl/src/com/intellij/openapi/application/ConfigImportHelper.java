@@ -195,7 +195,15 @@ public final class ConfigImportHelper {
           importScenarioStatistics = IMPORTED_FROM_PREVIOUS_VERSION;
         }
         doImport(oldConfigDir, newConfigDir, oldIdeHome, log, configImportOptions);
-
+        if (PluginManagerCore.isRunningFromSources()) {
+          try {
+            if (oldConfigDir.getParent().getFileName().toString().startsWith(".Chip")) {
+              FileUtil.delete(oldConfigDir.getParent());
+            }
+          } catch (IOException exception) {
+            log.info("Failed to delete the old configuration directory at " + oldConfigDir);
+          }
+        }
         if (settings != null) {
           settings.importFinished(newConfigDir);
         }
