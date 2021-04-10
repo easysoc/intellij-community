@@ -525,7 +525,7 @@ Page custom uninstallOldVersionDialog
 Page custom ConfirmDesktopShortcut
   !define MUI_PAGE_HEADER_TEXT "$(choose_start_menu_folder)"
   !define MUI_STARTMENUPAGE_NODISABLE
-  !define MUI_STARTMENUPAGE_DEFAULTFOLDER "JetBrains"
+  !define MUI_STARTMENUPAGE_DEFAULTFOLDER "EasySoC"
 
 !insertmacro MUI_PAGE_STARTMENU Application $STARTMENU_FOLDER
 !define MUI_ABORTWARNING
@@ -1341,7 +1341,7 @@ skip_ipr:
   WriteRegStr SHCTX "Software\Microsoft\Windows\CurrentVersion\Uninstall\${PRODUCT_WITH_VER}" \
               "DisplayVersion" "${VER_BUILD}"
   WriteRegStr SHCTX "Software\Microsoft\Windows\CurrentVersion\Uninstall\${PRODUCT_WITH_VER}" \
-              "Publisher" "JetBrains s.r.o."
+              "Publisher" "EasySoC Inc."
   WriteRegStr SHCTX "Software\Microsoft\Windows\CurrentVersion\Uninstall\${PRODUCT_WITH_VER}" \
               "URLInfoAbout" "https://www.jetbrains.com/products"
   WriteRegStr SHCTX "Software\Microsoft\Windows\CurrentVersion\Uninstall\${PRODUCT_WITH_VER}" \
