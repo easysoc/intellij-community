@@ -96,7 +96,7 @@ final class WinExeInstallerBuilder {
 
     if (SystemInfoRt.isLinux) {
       Path ideaNsiPath = nsiConfDir.resolve("idea.nsi")
-      Files.writeString(ideaNsiPath, BuildUtils.replaceAll(ideaNsiPath.text, ["\${IMAGES_LOCATION}\\": "\${IMAGES_LOCATION}/"], ""))
+      Files.writeString(ideaNsiPath, BuildUtils.replaceAll(ideaNsiPath.toFile().text, ["\${IMAGES_LOCATION}\\": "\${IMAGES_LOCATION}/"], ""))
     }
 
     try {
