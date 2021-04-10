@@ -299,6 +299,7 @@ final class WindowsDistributionBuilder extends OsSpecificDistributionBuilder {
     return patchedFile
   }
 
+  @CompileStatic(TypeCheckingMode.SKIP)
   private String buildWinZip(List<Path> jreDirectoryPaths, String zipNameSuffix, Path winDistPath) {
     return buildContext.messages.block("Build Windows ${zipNameSuffix}.zip distribution") {
       String baseName = buildContext.productProperties.getBaseArtifactName(buildContext.applicationInfo, buildContext.buildNumber)
@@ -309,7 +310,11 @@ final class WindowsDistributionBuilder extends OsSpecificDistributionBuilder {
 
       String zipPrefix = customizer.getRootDirectoryName(buildContext.applicationInfo, buildContext.buildNumber)
       List<Path> dirs = [Paths.get(buildContext.paths.distAll), winDistPath, productJsonDir] + jreDirectoryPaths
-      BuildHelper.zip(buildContext, targetFile, dirs, zipPrefix)
+      buildContext.ant.zip(zipfile: targetFile) {
+        dirs.each {
+          zipfileset(dir: it, prefix: zipPrefix)
+        }
+      }
       ProductInfoValidator.checkInArchive(buildContext, targetFile.toString(), zipPrefix)
       buildContext.notifyArtifactWasBuilt(targetFile)
       return targetFile
