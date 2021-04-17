@@ -36,9 +36,9 @@ internal class NonModalCommitCustomization : ApplicationInitializedListener {
   override fun componentsInitialized() {
     if (!isNewUser()) return
 
-    PropertiesComponent.getInstance().setValue(KEY, true)
-    appSettings.COMMIT_FROM_LOCAL_CHANGES = true
-    logStateChanged(null)
+    //PropertiesComponent.getInstance().setValue(KEY, true)
+    //appSettings.COMMIT_FROM_LOCAL_CHANGES = true
+    //logStateChanged(null)
   }
 
   companion object {
