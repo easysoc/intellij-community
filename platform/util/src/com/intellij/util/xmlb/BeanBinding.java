@@ -325,7 +325,7 @@ public class BeanBinding extends NotNullDeserializeBinding {
         else if (aClass == String.class) {
           LOG.error("Do not compute bindings for String");
         }
-        LOG.warn("no accessors for " + aClass.getName());
+        //LOG.warn("no accessors for " + aClass.getName());
       }
       return result;
     }
